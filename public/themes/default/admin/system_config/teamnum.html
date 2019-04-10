@@ -1,0 +1,43 @@
+<include file="public@header" />
+</head>
+<body>
+
+	<div class="wrap js-check-wrap">
+		
+		<form class="form-horizontal js-ajax-form margin-top-20" action="{:url('admin/SystemConfig/doTeamnum')}" method="post">
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">设置A股人数</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<input type="text" class="form-control" name="teamnum_A" value="{$teamnum_A['teamnum_A']}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">设置B股人数</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<input type="text" class="form-control" name="teamnum_B" value="{$teamnum_B['teamnum_B']}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">设置C股人数</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<input type="text" class="form-control" name="teamnum_C" value="{$teamnum_C['teamnum_C']}">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					
+					
+					<input type="submit" class="btn btn-primary js-ajax-submit" value="{:lang('OK')}">
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>

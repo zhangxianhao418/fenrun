@@ -1,0 +1,30 @@
+<include file="public@header" />
+</head>
+<body>
+
+	<div class="wrap js-check-wrap">
+		
+		<form class="form-horizontal js-ajax-form margin-top-20" action="{:url('admin/SystemConfig/doRelease')}" method="post">
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">账户余额释放周期/天</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<input type="text" class="form-control" name="release" value="{$data['release']}">
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					
+					
+					<input type="submit" class="btn btn-primary js-ajax-submit" value="{:lang('OK')}">
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>
