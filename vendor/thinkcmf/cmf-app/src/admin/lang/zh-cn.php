@@ -160,6 +160,8 @@ return [
     "EMAIL_SUBJECT"                      => '邮件标题',
     "EMAIL_TEMPLATE"                     => '邮件模版',
     "EMAIL_TEMPLATE_HELP_TEXT"           => '请用{$link}代替激活链接，{$username}代替用户名',
-    "INITIAL_USER"           => '初始用户'
+    "INITIAL_USER"           			 => '初始用户',
+	"USER_LOGIN"						 =>'用户实名',
+	"CREATE_TIME"						 =>'创建时间'
 ];
 

@@ -3,7 +3,7 @@
 <body>
 <div class="wrap">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="{:url('adminIndex/examineList')}">待审核列表</a></li>
+        <li class="active"><a href="{:url('Examine/examineList')}">待审核列表</a></li>
     </ul>
     
     <form method="post" class="js-ajax-form">
@@ -30,7 +30,7 @@
                     
                    
                     <td>
-						<a href="{:url('adminIndex/examine',array('id'=>$vo->id))}" class="btn btn-xs btn-warning">审核</a>
+						<a href="{:url('Examine/examine',array('id'=>$vo->id))}" class="btn btn-xs btn-warning">审核</a>
                         
 						
                     </td>

@@ -1,0 +1,42 @@
+<include file="public@header" />
+</head>
+<body>
+
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('News/news_list')}">消息列表</a></li>
+			<li><a href="{:url('News/add')}">发布消息</a></li>
+			<li class="active"><a href="#">修改消息</a></li>
+			
+		</ul>
+		<form class="form-horizontal js-ajax-form margin-top-20" action="{:url('News/doEdit')}" method="post">
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">标题</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<input type="text" class="form-control" name="title" value="{$data.title}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">内容</label>
+				<div class="col-md-6 col-sm-10">
+					
+					<textarea  class="form-control" name="content">{$data.content}</textarea>
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="hidden" name="id" value="{$data.id}">
+
+					<input type="submit" class="btn btn-primary js-ajax-submit" value="{:lang('OK')}">
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>

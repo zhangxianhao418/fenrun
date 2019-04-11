@@ -1,0 +1,45 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('Examine/examineList')}">待审核列表</a></li>
+    </ul>
+    
+    <form method="post" class="js-ajax-form">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>{:lang('MOBILE')}</th>
+				<th>上级推荐人手机号</th>
+                <th>创建时间</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            
+            <foreach name="list" item="vo">
+				
+                <tr>
+                    <td>{$vo->id}</td>
+					<td>{$vo->mobile}</td>
+					<td>{$vo->u_mobile}</td>
+                    
+                    
+                    <td>{:date('Y-m-d H:i:s',$vo->create_time)}</td>
+                   
+                    
+                   
+                   
+                </tr>
+				
+            </foreach>
+            </tbody>
+        </table>
+        {$list->render()}
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

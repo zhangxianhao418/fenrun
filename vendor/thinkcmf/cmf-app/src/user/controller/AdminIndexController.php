@@ -254,34 +254,7 @@ class AdminIndexController extends AdminBaseController
 	}	
 		
 		
-	/**
-	 * 待审核用户列表页面
-	 */	
-	public function examineList(){
-		$examine_list = model('user')
-					->field('id,mobile,create_time,examine')
-					->where('examine',0)
-					->where('user_type',2)
-					->paginate(15);
-		$this->assign('examine_list',$examine_list);
-		return $this->fetch();
-	}
-		
-		
-	/**
-	 * 审核用户页面
-	 */	
-	public function examine(){
-		$id = input('param.id', 0, 'intval');
-
-// 		根据用户id查询用户提交的审核信息与图片
-		$data = db('examine')
-			field('id,user_login,mobile,img1,img2,create_time')
-			->where('user_id',$id)
-			->find();
-		$this->assign('data',$data);
-		return $this->fetch();
-	}
+	
 		
 		
 		

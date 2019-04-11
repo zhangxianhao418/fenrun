@@ -1,0 +1,112 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('Examine/examineList')}">待审核列表</a></li>
+			<li class="active"><a href="{:url('Examine/examine')}">审核信息详情</a></li>
+		</ul>
+
+		<form method="post" class="js-ajax-form">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>审核ID</th>
+						<th>用户ID</th>
+						<th>{:lang('USER_LOGIN')}</th>
+						<th>{:lang('MOBILE')}</th>
+						<th>身份证号</th>
+						<th>第一面身份证</th>
+						<th>第二面身份证</th>
+						<th>{:lang('CREATE_TIME')}</th>
+						<th>{:lang('ACTIONS')}</th>
+					</tr>
+				</thead>
+				<tbody>
+
+
+
+					<tr>
+						<td>{$data.id}</td>
+						<td>{$data.user_id}</td>
+						<td>{$data.user_login}</td>
+						<td>{$data.mobile}</td>
+						<td>{$data.idcard}</td>
+						<td><img src="{$data.img1}"></td>
+						<td><img src="{$data.img2}"></td>
+
+
+						<td>{:date('Y-m-d H:i:s',$data.create_time)}</td>
+
+
+
+						<td>
+							<a href="{:url('Examine/examine_pass',array('id'=>$data.id,'user_id'=>$data.user_id))}" class="btn btn-xs btn-success">通过</a>
+							
+
+						</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+
+		</form>
+
+		<form method="post" class="js-ajax-form" action="{:url('Examine/examine_no_pass')}">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<td>请选择审核不予通过的原因</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>
+								<input type="radio" name="cause" class="format-ctrl" id="" value="0" />
+								<span>原因1</span>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="radio" name="cause" class="format-ctrl" id="" value="1" />
+								<span>原因2</span>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="radio" name="cause" class="format-ctrl" id="" value="2" />
+								<span>原因3</span>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="radio" name="cause" class="format-ctrl" id="" value="3" />
+								<span>原因4</span>
+							</label>
+						</td>
+					</tr>
+					
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>
+							<input type="hidden" name="id" id="" value="{$data.user_id}" />
+							<input type="submit" value="不予通过"  class="btn btn-xs btn-danger">
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
